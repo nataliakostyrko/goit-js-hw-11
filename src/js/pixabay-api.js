@@ -8,12 +8,12 @@ export function searchImages(query) {
         safesearch: 'true',
     });
 
-    const url = '${BASE_URL}?${params}';
+    const url = `${BASE_URL}?${params}`;
 
     return fetch(url).then(res => {
         if (!res.ok) {
-            throw new Error('Failed to fetch images');
+            throw new Error(res.status);
         }
-        return response.json();
+        return res.json();
     });
 }
