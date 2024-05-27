@@ -14,10 +14,10 @@ function imageTemplate(image) {
            class="gallery-link"/>
            </a>
       <div class="info-list">
-        <p class="info-item"><b>Likes:</b> ${image.likes}</p>
-        <p class="info-item"><b>Views:</b> ${image.views}</p>
-        <p class="info-item"><b>Comments:</b> ${image.comments}</p>
-        <p class="info-item"><b>Downloads:</b> ${image.downloads}</p>
+        <p class="info-item"><b class info-title>Likes:</b> ${image.likes}</p>
+        <p class="info-item"><b class info-title>Views:</b> ${image.views}</p>
+        <p class="info-item"><b class info-title>Comments:</b> ${image.comments}</p>
+        <p class="info-item"><b class info-title>Downloads:</b> ${image.downloads}</p>
       </div>
       </li>
       `;
