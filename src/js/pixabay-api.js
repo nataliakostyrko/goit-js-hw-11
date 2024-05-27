@@ -15,5 +15,5 @@ export function searchImages(query) {
             throw new Error(res.status);
         }
         return res.json();
-    });
+    })
 }
