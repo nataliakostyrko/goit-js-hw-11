@@ -5,8 +5,8 @@ import { searchImages } from './js/pixabay-api.js';
 import { addImage } from './js/render-function.js';
 
 const formElem = document.querySelector('.images-form');
-const imagesList = document.querySelector('.js-images-container');
 const loader = document.querySelector('.loader');
+const imagesList = document.querySelector('.js-images-container');
 
 
 

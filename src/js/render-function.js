@@ -1,6 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const imagesList = document.querySelector('.js-images-container');
 
 
 let lightbox;
