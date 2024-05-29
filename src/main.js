@@ -20,22 +20,24 @@ formElem.addEventListener('submit', event => {
             title: 'Error',
             message: 'Please enter a search query',
         });
-        
-        hideLoader();
 
         return;
     }
+    loader.classList.remove('hidden');
+    loader.classList.add('hidden');
     showLoader();
     imagesList.innerHTML = '';
 
     searchImages(query)
         .then(data => {
-            if (data && data.hits && data.hits.length) {
+            if (data.hits.length > 0) {
                 addImage(data.hits);
             } else {
-                throw Error(
-                    'Sorry, there are no images matching your search query. Please try again!'
-                );
+                iziToast.warning({
+                    title: 'Warning',
+                    message: 'Sorry, there are no images matching your search query. Please try again!',
+                }, 2000);
+                hideLoader();
             }
         })
 
@@ -46,10 +48,11 @@ formElem.addEventListener('submit', event => {
             });
         })
         .finally(() => {
-            hideLoader();
+         loader.classList.add('hidden');  
         });
 
     formElem.reset();
+    
 });
 
 

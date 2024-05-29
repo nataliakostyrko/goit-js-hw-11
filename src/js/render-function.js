@@ -29,14 +29,11 @@ function imagesTemplate(arr) {
 
 
 export function addImage(images) {
-  const markup = imagesTemplate(images);
-  imagesList.insertAdjacentHTML('beforeend', markup);
-  if (!lightbox) {
-    lightbox = new SimpleLightbox('.js-images-container a', {
-      captionsData: 'alt',
-      captionDelay: 250,
-    });
-  } else {
-    lightbox.refresh();
-  }
+  const createMarkup = imagesTemplate(images);
+  imagesList.insertAdjacentHTML('beforeend', createMarkup);
+ let lightbox = new SimpleLightbox('.gallery, a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
+  lightbox.refresh();
 }
